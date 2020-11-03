@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 import { ContactCard } from "../component/ContactCard.js";
 import { Modal } from "../component/Modal";
 
 export const Contacts = () => {
 	const [state, setState] = useState({
 		showModal: false
-	});
+    });
+    
+    const { store, actions } = useContext(Context);
 
 	return (
 		<div className="container">
